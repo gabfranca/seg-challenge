@@ -1,10 +1,14 @@
 package com.java.seg.challenge.infra.adpaters.database.category;
 
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
 import com.java.seg.challenge.core.model.Category;
 import com.java.seg.challenge.core.repository.CategoryRepository;
 import com.java.seg.challenge.infra.adpaters.database.category.mapper.CategoryMapper;
 
+@Service
 public class CategoryRepositoryJDBC implements CategoryRepository {
 
     private CategoryRepositoryJPA repository;

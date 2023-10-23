@@ -3,10 +3,13 @@ package com.java.seg.challenge.infra.adpaters.database.categorytax;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.java.seg.challenge.core.model.CategoryTax;
 import com.java.seg.challenge.core.repository.CategoryTaxRepository;
 import com.java.seg.challenge.infra.adpaters.database.categorytax.mapper.CategoryTaxMapper;
 
+@Service
 public class CategoryTaxRepositoryJDBC implements CategoryTaxRepository {
 
     private CategoryTaxRepositoryJPA repository;
