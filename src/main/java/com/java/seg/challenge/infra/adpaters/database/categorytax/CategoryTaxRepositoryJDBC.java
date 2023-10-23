@@ -16,6 +16,12 @@ public class CategoryTaxRepositoryJDBC implements CategoryTaxRepository {
 
     private CategoryTaxMapper mapper;
 
+    public CategoryTaxRepositoryJDBC(CategoryTaxRepositoryJPA repository, CategoryTaxMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+
+    }
+
     @Override
     public List<CategoryTax> getByCategoryCode(Integer id) {
         List<CategoryTax> response = new ArrayList<CategoryTax>();

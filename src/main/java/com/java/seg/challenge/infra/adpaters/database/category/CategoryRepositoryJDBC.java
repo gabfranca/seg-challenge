@@ -11,8 +11,13 @@ import com.java.seg.challenge.infra.adpaters.database.category.mapper.CategoryMa
 @Service
 public class CategoryRepositoryJDBC implements CategoryRepository {
 
-    private CategoryRepositoryJPA repository;
-    private CategoryMapper mapper;
+    private final CategoryRepositoryJPA repository;
+    private final CategoryMapper mapper;
+
+    public CategoryRepositoryJDBC(CategoryRepositoryJPA repository, CategoryMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
 
     @Override
     public Category getByCategoryCode(Integer id) {

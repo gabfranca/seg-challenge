@@ -1,8 +1,11 @@
 package com.java.seg.challenge.infra.adpaters.database.categorytax.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.java.seg.challenge.core.model.CategoryTax;
 import com.java.seg.challenge.infra.adpaters.database.categorytax.CategoryTaxEntity;
 
+@Component
 public class CategoryTaxMapper {
     public CategoryTax toModel(CategoryTaxEntity entity) {
         CategoryTax categoryTax = new CategoryTax();

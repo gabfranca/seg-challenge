@@ -1,8 +1,11 @@
 package com.java.seg.challenge.infra.adpaters.database.category.mapper;
 
+import org.springframework.stereotype.Component;
+
 import com.java.seg.challenge.core.model.Category;
 import com.java.seg.challenge.infra.adpaters.database.category.CategoryEntity;
 
+@Component
 public class CategoryMapper {
     public Category toModel(CategoryEntity entity) {
         Category response = new Category();

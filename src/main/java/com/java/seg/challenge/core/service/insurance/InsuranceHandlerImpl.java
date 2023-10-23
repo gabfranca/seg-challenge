@@ -29,7 +29,7 @@ public class InsuranceHandlerImpl implements InsuranceHandler {
     public Insurance insert(Insurance insurance) {
         Category category = categoryRepository.getByCategoryName(insurance.getCategoryName());
         List<CategoryTax> categoryTaxList = categoryTaxRepository.getByCategoryCode(category.getCategoryCode());
-        List<Double> taxes = categoryTaxList.stream().map(x -> x.TaxPercentValue).collect(Collectors.toList());
+        List<Double> taxes = categoryTaxList.stream().map(x -> (x.TaxPercentValue) / 100).collect(Collectors.toList());
         Double calculatedPrice = calculatorService.calculateInsuranceTax(insurance.getBasePrice(), taxes);
         insurance.setTaxedPrice(calculatedPrice);
         return insurance;

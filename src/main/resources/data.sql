@@ -8,23 +8,22 @@ INSERT INTO imposto VALUES (1,current_timestamp(), current_timestamp(), 'IOF', '
 INSERT INTO imposto VALUES (2,current_timestamp(), current_timestamp(), 'PIS', 'Programa de Integração Social(PIS)' )
 INSERT INTO imposto VALUES (3,current_timestamp(), current_timestamp(), 'COFINS', 'Contribuição para o Financiamento da Seguridade Social (COFINS)' )
 
-INSERT INTO categoria_imposto VALUES (1 , 1  , 1, 1)
-INSERT INTO categoria_imposto VALUES (2 , 5.5, 1, 2)
-INSERT INTO categoria_imposto VALUES (3 , 2  , 1, 3)
-INSERT INTO categoria_imposto VALUES (4 , 4  , 1, 4)
-INSERT INTO categoria_imposto VALUES (5 , 5  , 1, 5)
 
-INSERT INTO categoria_imposto VALUES (6 , 2  , 2, 1)
-INSERT INTO categoria_imposto VALUES (7 , 4  , 2, 2)
-INSERT INTO categoria_imposto VALUES (8 , 4  , 2, 3)
-INSERT INTO categoria_imposto VALUES (9 , 2.5, 2, 4)
-INSERT INTO categoria_imposto VALUES (10, 3  ,2, 5 )
-
-INSERT INTO categoria_imposto VALUES (11,3, 3 , 1)
-INSERT INTO categoria_imposto VALUES (12,1, 3 , 2 )
-INSERT INTO categoria_imposto VALUES (13,1, 3 , 3 )
-INSERT INTO categoria_imposto VALUES (14, 3, 3 , 4 )
-INSERT INTO categoria_imposto VALUES (15,  2 ,3, 5)
+INSERT INTO categoria_imposto   VALUES ( 1, 1 ,  1,1   )
+INSERT INTO categoria_imposto   VALUES ( 2, 2 ,  1,5.5 )
+INSERT INTO categoria_imposto   VALUES ( 3, 3 ,  1,2   )
+INSERT INTO categoria_imposto   VALUES ( 4, 4 ,  1,4   )
+INSERT INTO categoria_imposto   VALUES ( 5, 5 ,  1,5   )
+INSERT INTO categoria_imposto   VALUES ( 1, 6 ,  2,2   )
+INSERT INTO categoria_imposto   VALUES ( 2, 7 ,  2,4   )
+INSERT INTO categoria_imposto   VALUES ( 3, 8 ,  2,4   )
+INSERT INTO categoria_imposto   VALUES ( 4, 9 ,  2,2.5  )
+INSERT INTO categoria_imposto   VALUES ( 5, 10,   2, 3  )
+INSERT INTO categoria_imposto   VALUES ( 1,  11,  3, 3  )
+INSERT INTO categoria_imposto   VALUES ( 2,  12,  3, 1  )
+INSERT INTO categoria_imposto   VALUES ( 3,  13,  3, 1  )
+INSERT INTO categoria_imposto   VALUES ( 4,  14,  3, 3  )
+INSERT INTO categoria_imposto   VALUES ( 5, 15,   3, 2  )
 
 -- -- create table seguro (
 -- --     codigo_seguro int primary key identity,
