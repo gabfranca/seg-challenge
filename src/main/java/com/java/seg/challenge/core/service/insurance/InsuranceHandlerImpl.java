@@ -53,8 +53,7 @@ public class InsuranceHandlerImpl implements InsuranceHandler {
 
     @Override
     public Insurance getByCode(String code) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getByCode'");
+        return insuranceRepository.getByCode(code);
     }
 
     @Override
@@ -67,8 +66,6 @@ public class InsuranceHandlerImpl implements InsuranceHandler {
         insurance.setTaxedPrice(calculatedPrice);
         insurance.setCategoryCode(category.getCategoryCode());
         insurance = insuranceRepository.createInsurance(insurance);
-        insurance.setCategoryName(category.getCategoryName());
-        insurance.setCategoryCode(category.getCategoryCode());
         return insurance;
     }
 

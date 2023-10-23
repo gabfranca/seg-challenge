@@ -14,6 +14,8 @@ public class InsuranceMapper {
         response.setInsuranceName(entity.getName());
         response.setBasePrice(entity.getBasePrice());
         response.setTaxedPrice(entity.getTaxedPrice());
+        response.setCategoryCode(entity.getCategoryId());
+        response.setCategoryName(entity.getCategory().getName());
         return response;
     }
 

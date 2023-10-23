@@ -2,7 +2,9 @@ package com.java.seg.challenge.infra.adpaters.rest.in.product.insurance;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +22,19 @@ public class ProductInsuranceController {
 
     ProductInsuranceController(InsuranceHandler handler) {
         this.handler = handler;
+    }
+
+    @GetMapping("/insurance/{code}")
+    public ResponseEntity<ResultDTO> gettInsurance(@PathVariable String code) {
+        ResultDTOBuilder result = new ResultDTOBuilder();
+        try {
+            result.builder().withMessage("successfully").withContent(handler.getByCode(code));
+        } catch (Exception e) {
+            result.builder().withMessage("failed to process: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result.build());
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result.build());
+
     }
 
     @PostMapping("/insurance")
