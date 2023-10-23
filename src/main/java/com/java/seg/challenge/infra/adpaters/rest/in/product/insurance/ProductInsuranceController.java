@@ -1,5 +1,8 @@
 package com.java.seg.challenge.infra.adpaters.rest.in.product.insurance;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpStatusCode;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -22,20 +25,27 @@ public class ProductInsuranceController {
     }
 
     @PostMapping("/insurance")
-    public @ResponseBody ResultDTO inputInsurance(@RequestBody Insurance request) {
-
+    public ResponseEntity<ResultDTO> inputInsurance(@RequestBody Insurance request) {
         ResultDTOBuilder result = new ResultDTOBuilder();
+        try {
+            result.builder().withMessage("created with success.").withContent(handler.insert(request));
+        } catch (Exception e) {
+            result.builder().withMessage("failed to process: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result.build());
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result.build());
 
-        result.builder().withMessage("success").withContent(handler.insert(request));
-        return result.build();
     }
 
     @PatchMapping("/insurance")
-    public @ResponseBody ResultDTO updateInsurance(@RequestBody Insurance request) {
-        System.out.println(request);
-
+    public ResponseEntity<ResultDTO> updateInsurance(@RequestBody Insurance request) {
         ResultDTOBuilder result = new ResultDTOBuilder();
-        result.builder().withMessage("success").withContent(request);
-        return result.build();
+        try {
+            result.builder().withMessage("updated with success").withContent(handler.update(request));
+        } catch (Exception e) {
+            result.builder().withMessage("failed to process: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(result.build());
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(result.build());
     }
 }

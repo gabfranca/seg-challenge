@@ -3,11 +3,11 @@ package com.java.seg.challenge.core.model;
 import java.time.LocalDateTime;
 
 public class Category {
-    public Integer CategoryCode;
-    public String CategoryName;
-    public String CategoryDescription;
-    public LocalDateTime createDate;
-    public LocalDateTime alterDate;
+    private Integer CategoryCode;
+    private String CategoryName;
+    private String CategoryDescription;
+    private LocalDateTime createDate;
+    private LocalDateTime alterDate;
 
     public Integer getCategoryCode() {
         return this.CategoryCode;

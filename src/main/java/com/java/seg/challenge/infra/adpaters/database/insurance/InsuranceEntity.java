@@ -1,10 +1,15 @@
 package com.java.seg.challenge.infra.adpaters.database.insurance;
 
+import com.java.seg.challenge.infra.adpaters.database.category.CategoryEntity;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,8 +25,11 @@ public class InsuranceEntity {
     private Double basePrice;
     @Column(name = "valor_tarifado", nullable = false)
     private Double taxedPrice;
-    @Column(name = "codigo_categoria", nullable = false)
-    private Double categoryId;
+    // @Column(name = "codigo_categoria", nullable = false)
+    // private Integer categoryId;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "codigo_categoria")
+    private CategoryEntity category;
 
     public String getId() {
         return this.id;
@@ -55,11 +63,15 @@ public class InsuranceEntity {
         this.taxedPrice = taxedPrice;
     }
 
-    public Double getCategoryId() {
-        return this.categoryId;
+    public Integer getCategoryId() {
+        return this.category.getId();
     }
 
-    public void setCategoryId(Double categoryId) {
-        this.categoryId = categoryId;
+    public CategoryEntity getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(CategoryEntity categoryEntity) {
+        this.category = categoryEntity;
     }
 }

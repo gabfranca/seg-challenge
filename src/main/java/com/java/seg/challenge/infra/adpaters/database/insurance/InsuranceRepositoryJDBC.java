@@ -11,6 +11,11 @@ public class InsuranceRepositoryJDBC implements InsuranceRepository {
     private InsuranceRepositoryJPA repository;
     private InsuranceMapper mapper;
 
+    public InsuranceRepositoryJDBC(InsuranceRepositoryJPA repository, InsuranceMapper mapper) {
+        this.repository = repository;
+        this.mapper = mapper;
+    }
+
     @Override
     public Insurance getByCode(String code) {
         return mapper.toModel(repository.findById(code).get());
@@ -24,7 +29,5 @@ public class InsuranceRepositoryJDBC implements InsuranceRepository {
     @Override
     public Insurance updateInsurance(Insurance insurance) {
         return mapper.toModel(repository.save(mapper.toEntity(insurance)));
-
     }
-
 }

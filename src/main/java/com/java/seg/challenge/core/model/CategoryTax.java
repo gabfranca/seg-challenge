@@ -1,10 +1,10 @@
 package com.java.seg.challenge.core.model;
 
 public class CategoryTax {
-    public Integer CategoryTaxCode;
-    public Integer CategoryCode;
-    public Integer TaxCode;
-    public Double TaxPercentValue;
+    private Integer CategoryTaxCode;
+    private Integer CategoryCode;
+    private Integer TaxCode;
+    private Double TaxPercentValue;
 
     public Integer getCategoryTaxCode() {
         return this.CategoryTaxCode;

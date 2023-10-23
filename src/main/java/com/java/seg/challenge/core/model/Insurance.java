@@ -1,11 +1,12 @@
 package com.java.seg.challenge.core.model;
 
 public class Insurance {
-    public String InsuranceCode;
-    public String IsuranceName;
-    public String CategoryName;
-    public Double basePrice;
-    public Double taxedPrice;
+    private String InsuranceCode;
+    private String InsuranceName;
+    private String CategoryName;
+    private Integer CategoryCode;
+    private Double basePrice;
+    private Double taxedPrice;
 
     public String getInsuranceCode() {
         return this.InsuranceCode;
@@ -15,12 +16,12 @@ public class Insurance {
         this.InsuranceCode = InsuranceCode;
     }
 
-    public String getIsuranceName() {
-        return this.IsuranceName;
+    public String getInsuranceName() {
+        return this.InsuranceName;
     }
 
-    public void setIsuranceName(String IsuranceName) {
-        this.IsuranceName = IsuranceName;
+    public void setInsuranceName(String IsuranceName) {
+        this.InsuranceName = IsuranceName;
     }
 
     public String getCategoryName() {
@@ -45,6 +46,14 @@ public class Insurance {
 
     public void setTaxedPrice(Double taxedPrice) {
         this.taxedPrice = taxedPrice;
+    }
+
+    public Integer getCategoryCode() {
+        return this.CategoryCode;
+    }
+
+    public void setCategoryCode(Integer CategoryCode) {
+        this.CategoryCode = CategoryCode;
     }
 
 }

@@ -20,7 +20,7 @@ public class CategoryMapper {
     public CategoryEntity toEntity(Category model) {
         CategoryEntity entity = new CategoryEntity();
         entity.setId(model.getCategoryCode());
-        entity.setName(model.CategoryName);
+        entity.setName(model.getCategoryName());
         entity.setDescription(model.getCategoryDescription());
         entity.setCreateDate(model.getCreateDate());
         entity.setAlterDate(model.getAlterDate());
