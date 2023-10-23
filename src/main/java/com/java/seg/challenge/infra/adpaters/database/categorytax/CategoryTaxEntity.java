@@ -1,6 +1,4 @@
-package com.java.seg.challenge.infra.adpaters.database.InsuranceTax;
-
-import java.time.LocalDateTime;
+package com.java.seg.challenge.infra.adpaters.database.categorytax;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -10,13 +8,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "seguro_imposto")
-public class InsuranceTaxEntity {
+@Table(name = "categoria_imposto")
+public class CategoryTaxEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "codigo_seguro_imposto")
+    @Column(name = "codigo_categoria_imposto")
     private Integer id;
-    @Column(name = "codigo_seguro", nullable = false)
+    @Column(name = "codigo_categoria", nullable = false)
     private String name;
     @Column(name = "codigo_imposto", nullable = false)
     private String description;

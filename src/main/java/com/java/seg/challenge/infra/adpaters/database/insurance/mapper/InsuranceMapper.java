@@ -7,20 +7,18 @@ public class InsuranceMapper {
     public Insurance toModel(InsuranceEntity entity) {
         Insurance response = new Insurance();
         response.setInsuranceCode(entity.getId());
-        response.setInsuranceName(entity.getName());
-        response.setInsuranceDescription(entity.getDescription());
-        response.setAlterDate(entity.getAlterDate());
-        response.setCreateDate(entity.getCreateDate());
+        response.setIsuranceName(entity.getName());
+        response.setBasePrice(entity.getBasePrice());
+        response.setTaxedPrice(entity.getTaxedPrice());
         return response;
     }
 
     public InsuranceEntity toEntity(Insurance model) {
         InsuranceEntity entity = new InsuranceEntity();
         entity.setId(model.getInsuranceCode());
-        entity.setName(model.insuranceName);
-        entity.setDescription(model.getInsuranceDescription());
-        entity.setCreateDate(model.getCreateDate());
-        entity.setAlterDate(model.getAlterDate());
+        entity.setName(model.getCategoryName());
+        entity.setBasePrice(model.getBasePrice());
+        entity.setTaxedPrice(model.getTaxedPrice());
         return entity;
     }
 }

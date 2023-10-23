@@ -1,4 +1,4 @@
-package com.java.seg.challenge.core.service;
+package com.java.seg.challenge.core.service.calculator;
 
 import java.util.List;
 

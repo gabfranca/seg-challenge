@@ -1,7 +1,5 @@
 package com.java.seg.challenge.infra.adpaters.database.insurance;
 
-import java.time.LocalDateTime;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,25 +10,24 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "seguro")
 public class InsuranceEntity {
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(name = "codigo_seguro")
-    private Integer id;
-    @Column(name = "nome_seguro", length = 50, nullable = false)
+    private String id;
+    @Column(name = "nome_seguro", nullable = false)
     private String name;
-    @Column(name = "decricao_seguro", length = 150, nullable = false)
-    private String description;
-    @Column(name = "data_criacao_seguro", nullable = false)
-    private LocalDateTime createDate;
-    @Column(name = "data_alteracao_seguro", nullable = false)
-    private LocalDateTime alterDate;
+    @Column(name = "valor_base", nullable = false)
+    private Double basePrice;
+    @Column(name = "valor_tarifado", nullable = false)
+    private Double taxedPrice;
+    @Column(name = "codigo_categoria", nullable = false)
+    private Double categoryId;
 
-    public Integer getId() {
+    public String getId() {
         return this.id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -42,27 +39,27 @@ public class InsuranceEntity {
         this.name = name;
     }
 
-    public String getDescription() {
-        return this.description;
+    public Double getBasePrice() {
+        return this.basePrice;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBasePrice(Double basePrice) {
+        this.basePrice = basePrice;
     }
 
-    public LocalDateTime getCreateDate() {
-        return this.createDate;
+    public Double getTaxedPrice() {
+        return this.taxedPrice;
     }
 
-    public void setCreateDate(LocalDateTime createDate) {
-        this.createDate = createDate;
+    public void setTaxedPrice(Double taxedPrice) {
+        this.taxedPrice = taxedPrice;
     }
 
-    public LocalDateTime getAlterDate() {
-        return this.alterDate;
+    public Double getCategoryId() {
+        return this.categoryId;
     }
 
-    public void setAlterDate(LocalDateTime alterDate) {
-        this.alterDate = alterDate;
+    public void setCategoryId(Double categoryId) {
+        this.categoryId = categoryId;
     }
 }

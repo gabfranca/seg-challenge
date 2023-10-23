@@ -1,51 +1,50 @@
 package com.java.seg.challenge.core.model;
 
-import java.time.LocalDateTime;
-
 public class Insurance {
-    public Integer insuranceCode;
-    public String insuranceName;
-    public String insuranceDescription;
-    public LocalDateTime createDate;
-    public LocalDateTime alterDate;
+    public String InsuranceCode;
+    public String IsuranceName;
+    public String CategoryName;
+    public Double basePrice;
+    public Double taxedPrice;
 
-    public Integer getInsuranceCode() {
-        return this.insuranceCode;
+    public String getInsuranceCode() {
+        return this.InsuranceCode;
     }
 
-    public void setInsuranceCode(Integer insuranceCode) {
-        this.insuranceCode = insuranceCode;
+    public void setInsuranceCode(String InsuranceCode) {
+        this.InsuranceCode = InsuranceCode;
     }
 
-    public String getInsuranceName() {
-        return this.insuranceName;
+    public String getIsuranceName() {
+        return this.IsuranceName;
     }
 
-    public void setInsuranceName(String insuranceName) {
-        this.insuranceName = insuranceName;
+    public void setIsuranceName(String IsuranceName) {
+        this.IsuranceName = IsuranceName;
     }
 
-    public String getInsuranceDescription() {
-        return this.insuranceDescription;
+    public String getCategoryName() {
+        return this.CategoryName;
     }
 
-    public void setInsuranceDescription(String insuranceDescription) {
-        this.insuranceDescription = insuranceDescription;
+    public void setCategoryName(String CategoryName) {
+        this.CategoryName = CategoryName;
     }
 
-    public LocalDateTime getCreateDate() {
-        return this.createDate;
+    public Double getBasePrice() {
+        return this.basePrice;
     }
 
-    public void setCreateDate(LocalDateTime createDate) {
-        this.createDate = createDate;
+    public void setBasePrice(Double basePrice) {
+        this.basePrice = basePrice;
     }
 
-    public LocalDateTime getAlterDate() {
-        return this.alterDate;
+    public Double getTaxedPrice() {
+        return this.taxedPrice;
     }
 
-    public void setAlterDate(LocalDateTime alterDate) {
-        this.alterDate = alterDate;
+    public void setTaxedPrice(Double taxedPrice) {
+        this.taxedPrice = taxedPrice;
     }
+
 }
