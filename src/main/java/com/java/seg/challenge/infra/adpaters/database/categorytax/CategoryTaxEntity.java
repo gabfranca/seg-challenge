@@ -15,9 +15,41 @@ public class CategoryTaxEntity {
     @Column(name = "codigo_categoria_imposto")
     private Integer id;
     @Column(name = "codigo_categoria", nullable = false)
-    private String name;
+    private Integer categoryCode;
     @Column(name = "codigo_imposto", nullable = false)
-    private String description;
+    private Integer taxCode;
     @Column(name = "valor_taxa_imposto", nullable = false)
     private Double taxValue;
+
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getCategoryCode() {
+        return this.categoryCode;
+    }
+
+    public void setCategoryCode(Integer categoryCode) {
+        this.categoryCode = categoryCode;
+    }
+
+    public Integer getTaxCode() {
+        return this.taxCode;
+    }
+
+    public void setTaxCode(Integer taxCode) {
+        this.taxCode = taxCode;
+    }
+
+    public Double getTaxValue() {
+        return this.taxValue;
+    }
+
+    public void setTaxValue(Double value){
+         this.taxValue =  value;
+    }
 }

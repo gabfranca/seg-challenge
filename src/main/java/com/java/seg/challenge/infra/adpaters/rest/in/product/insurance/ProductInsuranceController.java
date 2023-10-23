@@ -30,8 +30,8 @@ public class ProductInsuranceController {
     public @ResponseBody ResultDTO inputInsurance(@RequestBody Insurance request) {
 
         ResultDTOBuilder result = new ResultDTOBuilder();
-        handler.insert(request);
-        result.builder().withMessage("success").withContent(request);
+
+        result.builder().withMessage("success").withContent(handler.insert(request));
         return result.build();
     }
 

@@ -4,6 +4,7 @@ public class CategoryTax {
     public Integer CategoryTaxCode;
     public Integer CategoryCode;
     public Integer TaxCode;
+    public Double TaxPercentValue;
 
     public Integer getCategoryTaxCode() {
         return this.CategoryTaxCode;
@@ -27,5 +28,13 @@ public class CategoryTax {
 
     public void setTaxCode(Integer TaxCode) {
         this.TaxCode = TaxCode;
+    }
+
+    public Double getTaxPercentValue() {
+        return this.TaxPercentValue;
+    }
+
+    public void setTaxPercentValue(Double TaxPercentValue) {
+        this.TaxPercentValue = TaxPercentValue;
     }
 }
